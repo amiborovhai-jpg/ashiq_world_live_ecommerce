@@ -14,7 +14,7 @@ const JWT_SECRET = process.env.JWT_SECRET || 'dev-secret-change-me';
 app.use(helmet({ contentSecurityPolicy: false }));
 app.use(cors());
 app.use(express.json({ limit: '1mb' }));
-app.use(express.static(path.join(__dirname, '..', 'public')));
+app.use(express.static(__dirname));
 
 const orderSchema = new mongoose.Schema({
   customer: {
